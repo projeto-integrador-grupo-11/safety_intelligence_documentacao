@@ -52,4 +52,4 @@ Além do desenvolvimento técnico, este projeto visa consolidar:
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins estritamente acadêmicos como parte do currículo de **[Nome do seu Curso]**.
+Este projeto foi desenvolvido para fins estritamente acadêmicos como parte do currículo de **Análise e Desenvolvimento de Sistemas (ADS)**.
