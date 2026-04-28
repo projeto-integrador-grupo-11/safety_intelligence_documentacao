@@ -34,15 +34,17 @@ CREATE TABLE favoritos (
 -- =====================
 -- TABELA MUNICIPIO
 -- =====================
-CREATE TABLE municipio (
-    idMunicipio INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(45),
-    fkUsuario INT,
-    fkFavoritos INT,
-    Npopulacional INT,
-    FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
-    FOREIGN KEY (fkFavoritos) REFERENCES favoritos(idFavoritos)
-);
+CREATE TABLE `municipio` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `nome` varchar(150) NOT NULL,
+  `idhm_geral` decimal(5,3) NOT NULL,
+  `renda` decimal(12,2) NOT NULL,
+  `educacao` decimal(5,3) NOT NULL,
+  `longevidade` decimal(5,3) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_municipio` (`nome`),
+  KEY `idx_idhm` (`idhm_geral` DESC,`renda` DESC)
+) ENGINE=InnoDB AUTO_INCREMENT=646 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- =====================
 -- TABELA CRIMINALIDADE
@@ -100,6 +102,20 @@ CREATE TABLE slack (
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
 
+
+-- =====================
+-- LOG
+-- =====================
+CREATE TABLE `log_sistema` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nivel` varchar(50) DEFAULT NULL,
+  `mensagem` text,
+  `data_hora` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
 -- =====================
 -- ESTADO
 -- =====================
@@ -113,6 +129,9 @@ INSERT INTO estado (nome, sigla) VALUES
 INSERT INTO usuario (senha, email) VALUES
 ('123456', 'user1@email.com'),
 ('abcdef', 'user2@email.com');
+
+
+
 
 -- =====================
 -- FAVORITOS
