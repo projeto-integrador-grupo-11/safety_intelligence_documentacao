@@ -24,7 +24,7 @@ O **Safety Intelligence** foi desenvolvido para auxiliar na inteligência de dad
 
 * **Linguagem:** Java, javascript, node
 * **Processamento de Dados:** Lógica de ETL (Extração, Tratamento e Carga)
-* **Banco de Dados:** SQL Server
+* **Banco de Dados:** MySQL
 * **Frontend:**  HTML & CSS
 * **Fontes de Dados:** APIs do IBGE, Portais da Transparência e Secretarias de Segurança Pública.
 * **Infraestrututra:** Ec2 aws.
